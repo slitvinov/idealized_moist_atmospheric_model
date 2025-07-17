@@ -321,6 +321,7 @@
 
 #undef MPP_GATHER_1D_
 #undef MPP_TYPE_
+#undef MPP_GATHER_1DV_
 #define MPP_TYPE_ real(FLOAT_KIND)
 #define MPP_GATHER_1D_ mpp_gather_real4_1d
 #define MPP_GATHER_1DV_ mpp_gather_real4_1dv
@@ -328,6 +329,7 @@
 
 #undef MPP_GATHER_1D_
 #undef MPP_TYPE_
+#undef MPP_GATHER_1DV_
 #define MPP_TYPE_ real(DOUBLE_KIND)
 #define MPP_GATHER_1D_ mpp_gather_real8_1d
 #define MPP_GATHER_1DV_ mpp_gather_real8_1dv
