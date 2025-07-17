@@ -195,8 +195,8 @@ end subroutine mpp_init
   !to be called at the end of a run
 subroutine mpp_exit()
   integer :: i, j, k, n, nmax, istat, out_unit, log_unit
-  real    :: t, tmin, tmax, tavg, tstd
-  real    :: m, mmin, mmax, mavg, mstd, t_total
+  real(DOUBLE_KIND)    :: t, tmin, tmax, tavg, tstd
+  real(DOUBLE_KIND)    :: m, mmin, mmax, mavg, mstd, t_total
   logical :: opened
 
   if( .NOT.module_is_initialized )return
