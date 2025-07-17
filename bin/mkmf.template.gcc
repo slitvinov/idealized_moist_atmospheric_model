@@ -1,0 +1,3 @@
+FC = mpif77
+CC = mpicc
+LD = mpif77
