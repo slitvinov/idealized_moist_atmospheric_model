@@ -2,7 +2,7 @@
 unalias *
 set echo
 #--------------------------------------------------------------------------------------------------------
-set platform  = gaea.intel                           # A unique identifier for your platform
+set platform  = gcc
 set template  = $cwd/../bin/mkmf.template.$platform  # path to template for your platform
 set mkmf      = $cwd/../bin/mkmf                     # path to executable mkmf
 set sourcedir = $cwd/../src                          # path to directory containing model source code
