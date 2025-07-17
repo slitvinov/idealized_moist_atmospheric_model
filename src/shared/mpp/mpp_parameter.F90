@@ -111,8 +111,8 @@ module mpp_parameter_mod
 ! DOMAIN_ID_BASE acts as a counter increment for domains as they are defined. It's used in
 ! combination with the flag parameter defined above to create a unique identifier for
 ! each Domain+flags combination. Therefore, the value of any flag must not exceed DOMAIN_ID_BASE.
-! integer(LONG_KIND), parameter :: DOMAIN_ID_BASE=INT( 2**(4*LONG_KIND),KIND=LONG_KIND )
-  integer(LONG_KIND), parameter :: DOMAIN_ID_BASE=Z'0000000100000000' ! Workaround for 64bit init problem
+  integer(LONG_KIND), parameter :: DOMAIN_ID_BASE=INT( 2**(4*LONG_KIND),KIND=LONG_KIND )
+  !integer(LONG_KIND), parameter :: DOMAIN_ID_BASE=Z'0000000100000000' ! Workaround for 64bit init problem
   integer, parameter :: NON_BITWISE_EXACT_SUM=0
   integer, parameter :: BITWISE_EXACT_SUM=1
   integer, parameter :: MPP_DOMAIN_TIME=MPP_DEBUG+1
