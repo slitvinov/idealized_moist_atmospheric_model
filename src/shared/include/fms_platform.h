@@ -10,7 +10,7 @@
 #define NO_QUAD_PRECISION
 #define _ALLOCATABLE ALLOCATABLE
 #define _ALLOCATED ALLOCATED
-#define _NULL
-#define _PURE
+#define _NULL NULL
+#define _PURE PURE
 
 #endif
