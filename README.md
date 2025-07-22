@@ -15,3 +15,7 @@ $ cd postprocessing
 $ c99 mppnccombine.c -O2 `nc-config --libs --cflags` -o mppnccombine.x
 ```
 
+```
+$ ./configure
+$ make
+```
