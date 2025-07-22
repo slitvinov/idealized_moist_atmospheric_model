@@ -116,6 +116,9 @@
 
 !#####################################################################
 subroutine init_nonblock_type( nonblock_obj )
+#ifdef use_libMPI
+  use mpi
+#endif
    type(nonblock_type), intent(inout) :: nonblock_obj
 
 
