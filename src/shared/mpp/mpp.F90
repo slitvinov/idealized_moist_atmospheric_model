@@ -138,7 +138,7 @@ module mpp_mod
   use shmem_interface
 #endif
 
-#if defined(use_libMPI) && defined(sgi_mipspro)
+#if defined(use_libMPI)
   use mpi
 #endif
 
@@ -165,11 +165,6 @@ private
 
 #if defined(use_libSMA) 
 #include <mpp/shmem.fh>
-#endif
-
-#if defined(use_libMPI) && !defined(sgi_mipspro)
-#include <mpif.h>   
-!sgi_mipspro gets this from 'use mpi'
 #endif
 
   !--- public paramters  -----------------------------------------------

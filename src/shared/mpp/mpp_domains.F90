@@ -94,7 +94,7 @@ module mpp_domains_mod
 !Balaji (GFDL.Climate.Model.Info@noaa.gov) 15 March 1999
 #include <fms_platform.h>
 
-#if defined(use_libMPI) && defined(sgi_mipspro)
+#if defined(use_libMPI)
   use mpi
 #endif
 
@@ -124,11 +124,6 @@ module mpp_domains_mod
   use mpp_pset_mod, only: mpp_pset_init
   implicit none
   private
-
-#if defined(use_libMPI) && !defined(sgi_mipspro)
-#include <mpif.h>
-!sgi_mipspro gets this from 'use mpi'
-#endif
 
   !--- public paramters imported from mpp_domains_parameter_mod
   public :: GLOBAL_DATA_DOMAIN, CYCLIC_GLOBAL_DOMAIN, BGRID_NE, BGRID_SW, CGRID_NE, CGRID_SW

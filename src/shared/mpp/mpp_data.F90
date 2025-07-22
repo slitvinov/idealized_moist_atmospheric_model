@@ -2,7 +2,7 @@
 module mpp_data_mod
 #include <fms_platform.h>
 
-#if defined(use_libMPI) && defined(sgi_mipspro)
+#if defined(use_libMPI)
   use mpi
 #endif
 
@@ -18,11 +18,6 @@ module mpp_data_mod
 
 #if defined(use_libSMA) || defined(use_MPI_SMA)
 #include <mpp/shmem.fh>
-#endif
-
-#if defined(use_libMPI) && !defined(sgi_mipspro)
-#include <mpif.h>  
-!sgi_mipspro gets this from 'use mpi'
 #endif
 
   !--- public data is used by mpp_mod
