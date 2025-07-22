@@ -42,7 +42,7 @@ subroutine mpp_array_global_min_max(in_array, tmask,isd,jsd,isc,iec,jsc,jec,nk, 
   real,                         intent(out):: g_min, g_max
   real, dimension(isd:,jsd:),   intent(in) :: geo_x,geo_y
   real, dimension(:),           intent(in) :: geo_z
-  double precision,                         intent(out):: xgmin, ygmin, zgmin, xgmax, ygmax, zgmax 
+  double precision,             intent(out):: xgmin, ygmin, zgmin, xgmax, ygmax, zgmax
 
 
 
