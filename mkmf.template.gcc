@@ -1,3 +1,8 @@
-FC = mpifort -fcray-pointer -ffree-line-length-none -std=f95
+FC = mpifort \
+   -fcray-pointer \
+   -fdefault-double-8 \
+   -fdefault-real-4 \
+   -ffree-line-length-none \
+   -std=f95
 CC = mpicc
 LD = mpif77
