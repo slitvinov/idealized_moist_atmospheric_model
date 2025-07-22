@@ -94,7 +94,7 @@ module mpp_domains_mod
 !Balaji (GFDL.Climate.Model.Info@noaa.gov) 15 March 1999
 #include <fms_platform.h>
 
-#if defined(use_libMPI)
+#if defined(use_libMPI) && defined(sgi_mipspro)
   use mpi
 #endif
 
