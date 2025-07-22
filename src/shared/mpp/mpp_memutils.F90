@@ -39,7 +39,8 @@ contains
 
     character(len=*), intent(in) :: text
     integer, intent(in), optional :: unit
-    real    :: m, mmin, mmax, mavg, mstd, end_memuse
+    real    :: m, end_memuse
+    double precision :: mmin, mmax, mavg, mstd
     integer :: mu
 #if defined(__sgi) || defined(__aix) || defined(__SX)
     integer :: memuse
@@ -75,7 +76,8 @@ contains
 
     character(len=*), intent(in) :: text
     integer, intent(in), optional :: unit
-    real :: m, mmin, mmax, mavg, mstd
+    double precision :: mmin, mmax, mavg, mstd
+    real :: m
     integer :: mu
 !memuse is an external function: works on SGI
 !use #ifdef to generate equivalent on other platforms.
