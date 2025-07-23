@@ -22,7 +22,7 @@
 module mpp_data_mod
 #include <fms_platform.h>
 
-#if defined(use_libMPI) && defined(sgi_mipspro)
+#if defined(use_libMPI)
   use mpi
 #endif
 
