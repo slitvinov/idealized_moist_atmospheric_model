@@ -259,7 +259,9 @@ end subroutine MPP_START_DO_UPDATE_3D_
 
 subroutine MPP_COMPLETE_DO_UPDATE_3D_(id_update, f_addrs, domain, update, d_type, ke_max, ke_list, &
                                       b_addrs, b_size, flags) 
+#ifdef use_libMPI
   use mpi
+#endif
   integer,             intent(in) :: id_update
   integer(LONG_KIND),  intent(in) :: f_addrs(:,:)
   type(domain2d),      intent(in) :: domain
