@@ -136,9 +136,10 @@
 
 !#####################################################################
 subroutine init_nonblock_type( nonblock_obj )
+#ifdef use_libMPI
+   use mpi
+#endif
    type(nonblock_type), intent(inout) :: nonblock_obj
-
-
    nonblock_obj%recv_pos           = 0
    nonblock_obj%send_pos           = 0
    nonblock_obj%recv_msgsize       = 0

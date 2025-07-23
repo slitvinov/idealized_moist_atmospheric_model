@@ -22,6 +22,9 @@
 ! -*-f90-*- 
 subroutine MPP_START_DO_UPDATE_3D_V_(id_update, f_addrsx, f_addrsy, domain, update_x, update_y,     &
                                      d_type, ke_max, ke_list, gridtype, flags, reuse_id_update, name)
+#ifdef use_libMPI
+  use mpi
+#endif
   integer,             intent(in) :: id_update
   integer(LONG_KIND),  intent(in) :: f_addrsx(:,:), f_addrsy(:,:)
   type(domain2d),      intent(in) :: domain
@@ -836,6 +839,9 @@ end subroutine MPP_START_DO_UPDATE_3D_V_
 subroutine MPP_COMPLETE_DO_UPDATE_3D_V_(id_update, f_addrsx, f_addrsy, domain, update_x, update_y,     &
                                         d_type, ke_max, ke_list, b_addrsx, b_addrsy, b_sizex, b_sizey, &
                                         gridtype, flags) 
+#ifdef use_libMPI
+  use mpi
+#endif
   integer,             intent(in) :: id_update
   integer(LONG_KIND),  intent(in) :: f_addrsx(:,:), f_addrsy(:,:)
   type(domain2d),      intent(in) :: domain
