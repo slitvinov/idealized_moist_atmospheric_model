@@ -1,0 +1,3 @@
+FC = mpifort -ffree-line-length-none -fcray-pointer
+CC = mpicc
+LD = mpifort
