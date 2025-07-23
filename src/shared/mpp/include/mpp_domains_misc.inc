@@ -427,7 +427,8 @@ end subroutine init_nonblock_type
                                                     ! found. default value is false.
 ! some local variables                              
   logical                :: check_success, error_exit
-  real, dimension(:,:), allocatable :: field1, field2
+  real, dimension(:,:), allocatable :: field1
+  real, dimension(:,:), allocatable :: field2
   integer :: i, j, pe, npes, isd,ied,jsd,jed, is, ie, js, je
   type(domain2d) :: domain1, domain2
   
