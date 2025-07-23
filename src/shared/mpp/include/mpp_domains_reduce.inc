@@ -913,14 +913,18 @@
 #define MPP_DO_GLOBAL_FIELD_3D_ mpp_do_global_field2D_r8_3d
 #undef MPP_TYPE_
 #define MPP_TYPE_ real(DOUBLE_KIND)
-#include <mpp_do_global_field.h>                                    
+#undef MPP_ZERO_
+#define MPP_ZERO_ 0.0
+#include <mpp_do_global_field.h>
 
 #ifdef OVERLOAD_C8
 #undef MPP_DO_GLOBAL_FIELD_3D_
 #define MPP_DO_GLOBAL_FIELD_3D_ mpp_do_global_field2D_c8_3d
 #undef MPP_TYPE_
 #define MPP_TYPE_ complex(DOUBLE_KIND)
-#include <mpp_do_global_field.h>                                    
+#undef MPP_ZERO_
+#define MPP_ZERO_ (0.0, 0.0)
+#include <mpp_do_global_field.h>
 #endif
 
 #ifndef no_8byte_integers
@@ -928,13 +932,17 @@
 #define MPP_DO_GLOBAL_FIELD_3D_ mpp_do_global_field2D_i8_3d
 #undef MPP_TYPE_
 #define MPP_TYPE_ integer(LONG_KIND)
-#include <mpp_do_global_field.h>                                    
+#undef MPP_ZERO_
+#define MPP_ZERO_ 0
+#include <mpp_do_global_field.h>
 
 #undef MPP_DO_GLOBAL_FIELD_3D_
 #define MPP_DO_GLOBAL_FIELD_3D_ mpp_do_global_field2D_l8_3d
 #undef MPP_TYPE_
 #define MPP_TYPE_ logical(LONG_KIND)
-#include <mpp_do_global_field.h>                                    
+#undef MPP_ZERO_
+#define MPP_ZERO_ .FALSE.
+#include <mpp_do_global_field.h>
 #endif
 
 #ifdef OVERLOAD_R4
@@ -942,7 +950,9 @@
 #define MPP_DO_GLOBAL_FIELD_3D_ mpp_do_global_field2D_r4_3d
 #undef MPP_TYPE_
 #define MPP_TYPE_ real(FLOAT_KIND)
-#include <mpp_do_global_field.h>                                    
+#undef MPP_ZERO_
+#define MPP_ZERO_ 0.0
+#include <mpp_do_global_field.h>
 #endif
 
 #ifdef OVERLOAD_C4
@@ -950,18 +960,24 @@
 #define MPP_DO_GLOBAL_FIELD_3D_ mpp_do_global_field2D_c4_3d
 #undef MPP_TYPE_
 #define MPP_TYPE_ complex(FLOAT_KIND)
-#include <mpp_do_global_field.h>                                    
+#undef MPP_ZERO_
+#define MPP_ZERO_ (0.0, 0.0)
+#include <mpp_do_global_field.h>
 #endif
 
 #undef MPP_DO_GLOBAL_FIELD_3D_
 #define MPP_DO_GLOBAL_FIELD_3D_ mpp_do_global_field2D_i4_3d
 #undef MPP_TYPE_
 #define MPP_TYPE_ integer(INT_KIND)
-#include <mpp_do_global_field.h>                                    
+#undef MPP_ZERO_
+#define MPP_ZERO_ 0
+#include <mpp_do_global_field.h>
 
 #undef MPP_DO_GLOBAL_FIELD_3D_
 #define MPP_DO_GLOBAL_FIELD_3D_ mpp_do_global_field2D_l4_3d
 #undef MPP_TYPE_
+#undef MPP_ZERO_
 #define MPP_TYPE_ logical(INT_KIND)
+#define MPP_ZERO_ .FALSE.
 #include <mpp_do_global_field.h>
 

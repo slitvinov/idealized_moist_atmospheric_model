@@ -120,7 +120,7 @@
          if(PRESENT(default_data)) then
             global = default_data
          else
-            global = 0
+            global = MPP_ZERO_
          endif
 
          do k = 1, ke
