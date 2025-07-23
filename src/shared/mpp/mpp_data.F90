@@ -40,11 +40,6 @@ module mpp_data_mod
 #include <mpp/shmem.fh>
 #endif
 
-#if defined(use_libMPI) && !defined(sgi_mipspro)
-#include <mpif.h>  
-!sgi_mipspro gets this from 'use mpi'
-#endif
-
   !--- public data is used by mpp_mod
   public :: stat, mpp_stack, ptr_stack, status, ptr_status, sync, ptr_sync  
   public :: mpp_from_pe, ptr_from, remote_data_loc, ptr_remote

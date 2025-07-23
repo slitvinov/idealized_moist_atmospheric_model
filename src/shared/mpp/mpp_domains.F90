@@ -145,11 +145,6 @@ module mpp_domains_mod
   implicit none
   private
 
-#if defined(use_libMPI) && !defined(sgi_mipspro)
-#include <mpif.h>
-!sgi_mipspro gets this from 'use mpi'
-#endif
-
   !--- public paramters imported from mpp_domains_parameter_mod
   public :: GLOBAL_DATA_DOMAIN, CYCLIC_GLOBAL_DOMAIN, BGRID_NE, BGRID_SW, CGRID_NE, CGRID_SW
   public :: DGRID_NE, DGRID_SW, FOLD_WEST_EDGE, FOLD_EAST_EDGE, FOLD_SOUTH_EDGE, FOLD_NORTH_EDGE
@@ -499,7 +494,7 @@ module mpp_domains_mod
   integer,                                save :: a_sort_len=0        ! len sorted memory list
   integer,                                save :: n_addrs=0           ! num memory addresses used
 
-  integer(LONG_KIND), parameter :: ADDR2_BASE=Z'0000000000010000'
+  integer(LONG_KIND), parameter :: ADDR2_BASE=65536
   integer, parameter :: MAX_ADDRS2=128
   integer(LONG_KIND),dimension(MAX_ADDRS2),save :: addrs2_sorted=-9999  ! list of sorted local addrs
   integer,           dimension(-1:MAX_ADDRS2),save :: addrs2_idx=-9999  ! idx of addr2 assoicated w/ d_comm
@@ -524,10 +519,11 @@ module mpp_domains_mod
   integer,                                         save           :: n_comm=0            ! num communicators used
 
   !     integer(LONG_KIND), parameter :: GT_BASE=2**8
-  integer(LONG_KIND), parameter :: GT_BASE=Z'0000000000000100'  ! Workaround for 64bit int init problem
+  integer(LONG_KIND), parameter :: GT_BASE=256
 
   !     integer(LONG_KIND), parameter :: KE_BASE=2**48
-  integer(LONG_KIND), parameter :: KE_BASE=Z'0001000000000000'  ! Workaround for 64bit int init problem
+  integer, parameter :: k = LONG_KIND
+  integer(LONG_KIND), parameter :: KE_BASE=281474976710656_k
 
   integer, parameter :: MAXOVERLAP = 100 
 
