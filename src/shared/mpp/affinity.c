@@ -30,11 +30,6 @@
 #include <sys/resource.h>
 #include <sys/syscall.h>
 
-static pid_t gettid(void)
-{
-  return syscall(__NR_gettid);
-}
-
 /*
  * Returns this thread's CPU affinity, if bound to a single core,
  * or else -1.
