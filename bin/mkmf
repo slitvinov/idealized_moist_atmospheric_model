@@ -1,28 +1,4 @@
 #!/usr/bin/perl
-#-----------------------------------------------------------------------
-#              mkmf: Perl script for makefile construction
-#
-# AUTHOR: V. Balaji (v.balaji@noaa.gov)
-#         Princeton University/GFDL
-#
-# Full web documentation for mkmf:
-#     http://www.gfdl.noaa.gov/~vb/mkmf.html
-#
-# This program is free software; you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation; either version 2 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# For the full text of the GNU General Public License,
-# write to: Free Software Foundation, Inc.,
-#           675 Mass Ave, Cambridge, MA 02139, USA.
-#-----------------------------------------------------------------------
-
 $ENV{'LANG'} = 'C';
 require 5;
 use strict;
@@ -173,7 +149,6 @@ my %source_of; # sourcefile from object, using SRCROOT variable if present
 my @includepaths;
 my $scanOrder = 0;              # used to remember order of directory scan
 foreach $target ( @targets ) {
-   print STDERR '.' unless $opt_v; # show progress on screen (STDERR is used because it is unbuffered)
    if ( $opt_a and substr($target,0,1) ne '/' ) {
       # if an abs_path exists, attach it to all relative paths
       $target = $opt_a . $target;
@@ -345,7 +320,6 @@ my %used;			# list of object files that are used by others
 my @cmdline;
 # for each file in sources, write down dependencies on includes and modules
 foreach $object ( sort @objects ) {
-   print STDERR '.' unless $opt_v; # show progress on screen (STDERR is used because it is unbuffered)
    my %is_used;			# hash of objects containing modules used by current object
    my %obj_of_include;		# hash of includes for current object
    $is_used{$object} = 1;	# initialize with current object so as to avoid recursion
