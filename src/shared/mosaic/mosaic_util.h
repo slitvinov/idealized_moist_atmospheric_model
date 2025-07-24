@@ -93,6 +93,7 @@ void printNode(struct Node *list, char *str);
 void insertAfter(struct Node *list, double x, double y, double z, int intersect, double u, int inbound,
 		 double x2, double y2, double z2);
 int isIntersect(struct Node node);
+int isHeadNode(struct Node *list, struct Node nodeIn);
 int getFirstInbound( struct Node *list, struct Node *nodeOut);
 void getCoordinate(struct Node node, double *x, double *y, double *z);
 double metric(const double *p);
